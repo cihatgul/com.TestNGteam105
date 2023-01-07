@@ -12,17 +12,20 @@ public class QualitydemyPage {
     }
 
     @FindBy(xpath = "//a[@class='btn btn-sign-in-simple']")
-    public static WebElement ilkLoginButonu;
+    public static WebElement ilkLoginLinki;
 
     @FindBy(id="login-email")
-    public WebElement kullaniciImailKutusu;
+    public WebElement kullaniciEmailKutusu;
 
     @FindBy(id="login-password")
     public WebElement passwordKutusu;
 
-    @FindBy(xpath = "//button[text='Login']")
-    public WebElement loginButtonu;
+    @FindBy(xpath = "//button[@class='btn red radius-5 mt-4 w-100']")
+    public WebElement loginButonu;
 
     @FindBy(linkText = "My courses")
     public WebElement basariliGirisCoursesLinki;
+
+    @FindBy(xpath = "//*[text()='Accept']")
+    public WebElement cerezButtonu;
 }

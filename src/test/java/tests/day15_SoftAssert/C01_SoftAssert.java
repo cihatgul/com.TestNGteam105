@@ -1,4 +1,4 @@
-package tests.day15;
+package tests.day15_SoftAssert;
 
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
@@ -6,8 +6,6 @@ import org.testng.asserts.SoftAssert;
 import pages.AmazonPage;
 import ultilities.Driver;
 import ultilities.ReusebleMethods;
-
-import java.util.Arrays;
 
 public class C01_SoftAssert {
 

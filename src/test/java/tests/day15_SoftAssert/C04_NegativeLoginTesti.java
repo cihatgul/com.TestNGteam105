@@ -1,4 +1,4 @@
-package tests.day15;
+package tests.day15_SoftAssert;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,12 +18,12 @@ public class C04_NegativeLoginTesti {
     public void yanlisEmailTesti(){
 
         Driver.getDriver().get("https://www.qualitydemy.com/");
-        qualitydemyPage.ilkLoginButonu.click();
-        qualitydemyPage.kullaniciImailKutusu.sendKeys("mehmet@abc.com");
+        qualitydemyPage.ilkLoginLinki.click();
+        qualitydemyPage.kullaniciEmailKutusu.sendKeys("mehmet@abc.com");
         qualitydemyPage.passwordKutusu.sendKeys("31488081");
-        qualitydemyPage.loginButtonu.click();
+        qualitydemyPage.loginButonu.click();
 
-        Assert.assertTrue(qualitydemyPage.kullaniciImailKutusu.isDisplayed());
+        Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
         Driver.closeDriver();
     }
 
@@ -31,12 +31,12 @@ public class C04_NegativeLoginTesti {
     @Test
     public void yanlisPasswordTesti(){
         Driver.getDriver().get("https://www.qualitydemy.com/");
-        qualitydemyPage.ilkLoginButonu.click();
-        qualitydemyPage.kullaniciImailKutusu.sendKeys("user_1106147@login.com");
+        qualitydemyPage.ilkLoginLinki.click();
+        qualitydemyPage.kullaniciEmailKutusu.sendKeys("user_1106147@login.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
-        qualitydemyPage.loginButtonu.click();
+        qualitydemyPage.loginButonu.click();
 
-        Assert.assertTrue(qualitydemyPage.kullaniciImailKutusu.isDisplayed());
+        Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
         Driver.closeDriver();
 
     }
@@ -45,12 +45,12 @@ public class C04_NegativeLoginTesti {
     @Test
     public void yanlisEmailYanlisPasswordTesti(){
         Driver.getDriver().get("https://www.qualitydemy.com/");
-        qualitydemyPage.ilkLoginButonu.click();
-        qualitydemyPage.kullaniciImailKutusu.sendKeys("mehmet@abc.com");
+        qualitydemyPage.ilkLoginLinki.click();
+        qualitydemyPage.kullaniciEmailKutusu.sendKeys("mehmet@abc.com");
         qualitydemyPage.passwordKutusu.sendKeys("123456");
-        qualitydemyPage.loginButtonu.click();
+        qualitydemyPage.loginButonu.click();
 
-        Assert.assertTrue(qualitydemyPage.kullaniciImailKutusu.isDisplayed());
+        Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
         Driver.closeDriver();
     }
 }
