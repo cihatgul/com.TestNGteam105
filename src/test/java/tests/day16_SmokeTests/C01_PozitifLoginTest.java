@@ -3,31 +3,28 @@ package tests.day16_SmokeTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.QualitydemyPage;
-import ultilities.ConfigReader;
-import ultilities.Driver;
-import ultilities.ReusebleMethods;
+import utilities.ConfigReader;
+import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class C01_PozitifLoginTest {
 
     @Test
-    public void pozitifLoginTest(){
+    public void pozitifLoginTest() {
+
         // qualitydemy anasayfaya git
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
 
-        QualitydemyPage qualitydemyPage= new QualitydemyPage();
-
+        QualitydemyPage qualitydemyPage = new QualitydemyPage();
         qualitydemyPage.ilkLoginLinki.click();
 
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
 
-        qualitydemyPage.cerezButtonu.click();
-
-        ReusebleMethods.bekle(5);
-
         qualitydemyPage.loginButonu.click();
 
-        ReusebleMethods.bekle(3);
+        ReusableMethods.bekle(2);
+
 
         Assert.assertTrue(qualitydemyPage.basariliGirisCoursesLinki.isDisplayed());
         Driver.closeDriver();
