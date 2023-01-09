@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="grup calistirma" verbose="10">
+<suite name="grup calistirma" verbose="10">  <!-- burasi 1-10 arasinda deger veriliyor ve 1 en az ayrinti 10 en fazla ayrnti verir -->
 
     <test name="Istenen grubu calistirma">
         <!-- Istenen bir grubu calistirmak icin

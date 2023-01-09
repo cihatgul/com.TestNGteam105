@@ -17,53 +17,50 @@ public class C02_NegetifLoginTesti {
 
     QualitydemyPage qualitydemyPage = new QualitydemyPage();
 
-    @Test
+    @Test (priority = 1)
     public void yanlisEmailTesti() {
 
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        qualitydemyPage.ilkSayfaCerezButtonu.click();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
-
         ReusableMethods.bekle(3);
         Driver.closeDriver();
     }
 
-    @Test
+    @Test (priority = 2)
     public void yanlisPasswordTesti() {
         qualitydemyPage = new QualitydemyPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        qualitydemyPage.ilkSayfaCerezButtonu.click();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
-
         ReusableMethods.bekle(3);
         Driver.closeDriver();
-
     }
 
-
-    @Test
+    @Test (priority = 3)
     public void yanlisUsernameYanlisPasswordTesti() {
 
         qualitydemyPage = new QualitydemyPage();
         Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        qualitydemyPage.ilkSayfaCerezButtonu.click();
         qualitydemyPage.ilkLoginLinki.click();
         qualitydemyPage.kullaniciEmailKutusu.sendKeys(ConfigReader.getProperty("qdGecersizUsername"));
         qualitydemyPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
         qualitydemyPage.loginButonu.click();
 
         Assert.assertTrue(qualitydemyPage.kullaniciEmailKutusu.isDisplayed());
-
         ReusableMethods.bekle(3);
         Driver.closeDriver();
     }
-
 
 }

@@ -11,6 +11,9 @@ public class QualitydemyPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "//a[@onclick='cookieAccept();']")
+    public WebElement ilkSayfaCerezButtonu;
+
     @FindBy(xpath = "//*[text()='Log in']")
     public WebElement ilkLoginLinki;
 
