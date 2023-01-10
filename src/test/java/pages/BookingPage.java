@@ -9,9 +9,7 @@ import utilities.Driver;
 public class BookingPage {
 
     public BookingPage(){
-
         PageFactory.initElements(Driver.getDriver(),this);
-
     }
 
     // para birimi olarak TL secelim

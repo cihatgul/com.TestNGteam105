@@ -13,19 +13,21 @@ public class C01_SoftAssert {
 
         // amazon anasayfaya gidin
         Driver.getDriver().get("https://www.amazon.com");
+
         // amazon anasayfaya gittiginizi dogrulayin
         SoftAssert softAssert = new SoftAssert();
         String expectedUrlKelime = "amazon";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         softAssert.assertTrue(actualUrl.contains(expectedUrlKelime), "Url amazon icermiyor");
+
         // Nutella aratin
         AmazonPage amazonPage = new AmazonPage();
         amazonPage.amazonAramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
         // arama sonuclarinin nutella icerdigini dogrulayin
-
         String aramaSonucYazisi = amazonPage.aramaSonucuElementi.getText();
         softAssert.assertTrue(aramaSonucYazisi.contains("Nutella"), "Arama sonuclari Nutella icermiyor");
+
         // Java aratin
         amazonPage.amazonAramaKutusu.clear();
         amazonPage.amazonAramaKutusu.sendKeys("Java" + Keys.ENTER);

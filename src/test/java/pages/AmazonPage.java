@@ -23,4 +23,5 @@ public class AmazonPage {
     public WebElement aramaSonucuElementi;
 
 
+
 }

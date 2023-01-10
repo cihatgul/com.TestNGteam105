@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.AmazonPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
+import utilities.TestBaseRapor;
 
 public class C03_NutellaTesti {
 
